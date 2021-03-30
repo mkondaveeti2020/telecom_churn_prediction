@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<body data-spy="scroll" data-target=".navbar" data-offset="0" style="background-image: url('https://m.economictimes.com/thumb/msid-81431580,width-1200,height-900,resizemode-4,imgsize-740632/telecom-tower.jpg'); background-repeat: no-repeat;">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Model Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+		body {
+			background-image: url('Background_Image.jpg');
+			font-family: 'Tangerine', serif;
+			font-size: 25px;
+			color:blue;
+			font-weight: bold;
+			height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+    </style>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="text-align:center">Telecom Churn Prediction</h1>
+	<script type="text/javascript">function updateTextInput(val) {document.getElementById('textInput').value=val;}</script>
+	<div class="card h-95" style="background-color: rgba(150, 180, 215, 0.6);">
+              <div class="card-body" style="background-color: rgba(126, 123, 215, 0.6);"></div>
+    <form align="center" action="{{ url_for('predict')}}"method="post">
+    	
+		
+		<label for="total_ic_mou_8">&ensp; &emsp;total_ic_mou_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="total_ic_mou_8" name="total_ic_mou_8" min="0" max="2300" step ="1" value="0" oninput="document.getElementById('var1').value=this.value" required="required" />
+		<input type="text" id="var1" value=""/>
+		<br>
+        <label for="loc_ic_mou_8">&nbsp; &ensp; &emsp;loc_ic_mou_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="loc_ic_mou_8" name="loc_ic_mou_8" min="0" max="2110" step ="1" value="0" oninput="document.getElementById('var2').value=this.value" required="required" >
+		<input type="text" id="var2" value=""/>
+        <br>
+		<label for="loc_ic_t2m_mou_8">&nbsp;loc_ic_t2m_mou_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="loc_ic_t2m_mou_8" name="loc_ic_t2m_mou_8" min="0" max="1805" step ="1" value="0" oninput="document.getElementById('var3').value=this.value" required="required" >
+		<input type="text" id="var3" value=""/>
+        <br>
+        <label for="loc_ic_t2t_mou_8">&nbsp;&ensp;loc_ic_t2t_mou_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="loc_ic_t2t_mou_8" name="loc_ic_t2t_mou_8" min="0" max="935" step ="1" value="0" oninput="document.getElementById('var4').value=this.value" required="required" >
+		<input type="text" id="var4" value=""/>
+        <br>
+        <label for="total_og_mou_8">&ensp;&emsp;total_og_mou_8: &nbsp; &ensp; </label>
+		<input type="range" style="text-align:center" id="total_og_mou_8" name="total_og_mou_8" min="0" max="4840" step ="1" value="0" oninput="document.getElementById('var5').value=this.value" required="required" >
+		<input type="text" id="var5" value=""/>
+        <br>
+		<label for="last_day_rch_amt_8">last_day_rch_amt_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="last_day_rch_amt_8" name="last_day_rch_amt_8" min="0" max="1000" step ="1" value="0" oninput="document.getElementById('var6').value=this.value" required="required" >
+		<input type="text" id="var6" value=""/>
+        <br>
+        <label for="total_rech_amt_8">&nbsp;&ensp; total_rech_amt_8: &nbsp; &ensp; </label>
+		<input type="range" style="text-align:center" id="total_rech_amt_8" name="total_rech_amt_8" min="0" max="4000" step ="1" value="0" oninput="document.getElementById('var7').value=this.value" required="required" >
+		<input type="text" id="var7" value=""/>
+        <br>
+        <label for="loc_og_t2m_mou_8">loc_og_t2m_mou_8: &nbsp; &ensp; </label>
+		<input type="range" style="text-align:center" id="loc_og_t2m_mou_8" name="loc_og_t2m_mou_8" min="0" max="2080" step ="1" value="0" oninput="document.getElementById('var8').value=this.value" required="required" >
+		<input type="text" id="var8" value=""/>
+        <br>
+		<label for="total_rech_amt_Diff">total_rech_amt_Diff: &nbsp; &ensp; </label>
+		<input type="range" style="text-align:center" id="total_rech_amt_Diff" name="total_rech_amt_Diff" min="-2555" max="2350" step ="1" value="0" oninput="document.getElementById('var9').value=this.value" required="required" >
+		<input type="text" id="var9" value=""/>
+        <br>
+		<label for="loc_og_mou_8"> &ensp; &emsp; loc_og_mou_8: &nbsp; &ensp; </label>
+		<input type="range" style="text-align:center" id="loc_og_mou_8" name="loc_og_mou_8" min="0" max="2550" step ="1" value="0" oninput="document.getElementById('var10').value=this.value" required="required" >
+		<input type="text" id="var10" value=""/>
+        <br>
+		<label for="arpu_Diff">&emsp;&emsp;&ensp;&ensp;&emsp;arpu_Diff: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="arpu_Diff" name="arpu_Diff" min="-2200" max="2140" step ="1" value="0" oninput="document.getElementById('var11').value=this.value" required="required" >
+		<input type="text" id="var11" value=""/>
+        <br>
+		<label for="roam_og_mou_8">&nbsp; &ensp;roam_og_mou_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="roam_og_mou_8" name="roam_og_mou_8" min="0" max="535" step ="1" value="0" oninput="document.getElementById('var12').value=this.value" required="required" >
+		<input type="text" id="var12" value=""/>
+        <br>
+		<label for="arpu_8">&emsp;&emsp;&ensp;&ensp;&emsp;&emsp;arpu_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="arpu_8" name="arpu_8" min="-350" max="3300" step ="1" value="0" oninput="document.getElementById('var13').value=this.value" required="required" >
+		<input type="text" id="var13" value=""/>
+        <br>
+		<label for="max_rech_amt_8">&nbsp; &ensp;max_rech_amt_8: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="max_rech_amt_8" name="max_rech_amt_8" min="0" max="1100" step ="1" value="0" oninput="document.getElementById('var14').value=this.value" required="required" >
+		<input type="text" id="var14" value=""/>
+        <br>
+		<label for="total_og_mou_Diff">total_og_mou_Diff: &nbsp; &ensp;</label>
+		<input type="range" style="text-align:center" id="total_og_mou_Diff" name="total_og_mou_Diff" min="-2825" max="4070" step ="1" value="0" oninput="document.getElementById('var15').value=this.value" required="required" >
+		<input type="text" id="var15" value=""/>
+        <br><br><br>
+						
+        <button align="center" type="submit" class="btn btn-primary btn-block btn-large" style="height: 50px; width: 300px; font-size:24px; background-color: rgba(180, 220, 215, 0.5);">Predict Churn Customer</button>
+		
+    </form>
+
+   <br>
+   <br>
+   <div style="text-align:center">{{ prediction_text }}</div>
+ </div>
+
+
+</body>
+</html>
